@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jharkhand Connect - Uncover the Soul of India</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-white text-gray-800">
+
+    <!-- Header & Navigation -->
+    <header class="bg-black bg-opacity-50 fixed top-0 left-0 right-0 z-50 backdrop-blur-sm">
+        <div class="container mx-auto px-6 py-4">
+            <nav class="flex items-center justify-between text-white">
+                <a href="#" class="text-2xl font-bold">Jharkhand Connect</a>
+                <ul class="hidden md:flex items-center space-x-8 text-lg">
+                    <li><a href="#discover" class="hover:text-amber-400 transition-colors">Discover</a></li>
+                    <!-- Plan Your Trip Dropdown -->
+                    <li class="relative dropdown">
+                        <a href="#plan" class="hover:text-amber-400 transition-colors">Plan Your Trip <i class="fas fa-caret-down ml-1"></i></a>
+                        <ul class="absolute hidden dropdown-menu bg-white text-gray-800 shadow-lg rounded-md mt-2 py-2 w-56">
+                            <li><a href="#plan-stay" class="block px-4 py-2 hover:bg-gray-100">Where to Stay</a></li>
+                            <li><a href="#plan-guides" class="block px-4 py-2 hover:bg-gray-100">Find a Guide</a></li>
+                            <li><a href="#pathways" class="block px-4 py-2 hover:bg-gray-100">Tour Packages</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#marketplace" class="hover:text-amber-400 transition-colors">Artisan Market</a></li>
+                    <li><a href="#about" class="hover:text-amber-400 transition-colors">About</a></li>
+                    <li><a id="dashboard-link" href="/dashboard-main" class="hover:text-amber-400 transition-colors">Dashboard</a></li>
+                </ul>
+                <button id="menu-btn" class="md:hidden focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </nav>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <ul class="flex flex-col items-center py-4 space-y-4 bg-gray-800 text-white">
+                <li><a href="#discover" class="hover:text-amber-400 transition-colors">Discover</a></li>
+                <li><a href="#plan" class="hover:text-amber-400 transition-colors">Plan Your Trip</a></li>
+                <li><a href="#marketplace" class="hover:text-amber-400 transition-colors">Artisan Market</a></li>
+                <li><a href="#about" class="hover:text-amber-400 transition-colors">About</a></li>
+                <li><a href="/dashboard-main" class="hover:text-amber-400 transition-colors">Dashboard</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- Section 1: Hero -->
+        <section class="relative h-screen flex items-center justify-center text-center text-white overflow-hidden">
+            <!-- Background Video: Use local video from images folder -->
+            <video autoplay loop muted playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0 filter brightness-50">
+                <source src="static/images/hero.mp4" type="video/mp4">
+            </video>
+            <div class="relative z-10 px-4">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold hero-text-shadow leading-tight">Uncover the Soul of India.</h1>
+                <p class="mt-4 text-lg md:text-xl max-w-3xl mx-auto hero-text-shadow">Plan your personalized adventure to hidden waterfalls, ancient tribal cultures, and pristine forests with our AI-powered travel planner.</p>
+                <div class="mt-8 max-w-2xl mx-auto">
+                    <!-- AI Itinerary Planner Form -->
+                    <form id="ai-planner-form" class="flex flex-col sm:flex-row w-full rounded-lg shadow-2xl overflow-hidden">
+                        <input type="text" id="ai-prompt" class="w-full sm:w-3/4 px-6 py-4 text-gray-800 focus:outline-none" placeholder="What are you passionate about? (e.g., 'tribal art', 'waterfalls')">
+                        <button id="craft-journey-btn" type="submit" class="w-full sm:w-1/4 bg-amber-500 hover:bg-amber-600 text-white font-bold px-6 py-4 transition-colors">Craft My Journey</button>
+                    </form>
+                </div>
+          
+            </div>
+        </section>
+        
+        <!-- Section: What's New -->
+        <section class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">What's New in Jharkhand</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-gray-50 rounded-lg overflow-hidden pathway-card">
+                        <!-- What's New in Jharkhand section -->
+                        <img src="static/images/Things-To-Do-In-Jharkhand.webp" alt="Sarhul Festival" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold">Sarhul Festival Begins</h3>
+                            <p class="mt-2 text-gray-600">Experience the vibrant tribal festival celebrating nature across the state.</p>
+                            <a href="#" class="text-emerald-600 font-bold mt-4 inline-block">Learn More &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg overflow-hidden pathway-card">
+                        <img src="static/images/1668510728_cms_11zon.jpg" alt="Patratu Valley Eco-Trail" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold">New Eco-Tourism Trail</h3>
+                            <p class="mt-2 text-gray-600">A new trail opens in the Patratu Valley for adventure enthusiasts.</p>
+                            <a href="#" class="text-emerald-600 font-bold mt-4 inline-block">Explore Now &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg overflow-hidden pathway-card">
+                        <img src="static/images/eshdjoc4_mining_625x300_22_July_25.jpg.webp" alt="Mining Tourism" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold">India's First Mining Tourism</h3>
+                            <p class="mt-2 text-gray-600">Discover the unique industrial heritage of Jharkhand with guided mine tours.</p>
+                            <a href="#" class="text-emerald-600 font-bold mt-4 inline-block">Book a Tour &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg overflow-hidden pathway-card">
+                        <img src="static/images/ancient crafts.jpeg" alt="Dokra Art Workshop" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold">Dokra Art Workshops</h3>
+                            <p class="mt-2 text-gray-600">Learn the ancient craft of Dokra metal casting from master artisans.</p>
+                            <a href="#" class="text-emerald-600 font-bold mt-4 inline-block">Join a Workshop &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: The Trust Layer -->
+        <section class="py-16 md:py-24 bg-gray-50">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Travel with Confidence</h2>
+                <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Every guide, artisan, and homestay is verified, ensuring your experience is genuine, safe, and directly supports local communities.</p>
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <div class="flex flex-col items-center">
+                        <div class="bg-emerald-600 text-white rounded-full p-6 text-4xl">
+                            <i class="fas fa-shield-halved"></i>
+                        </div>
+                        <h3 class="mt-6 text-2xl font-bold">Blockchain-Verified Guides</h3>
+                        <p class="mt-2 text-gray-600">Meet certified guides whose credentials and expertise are immutably recorded for unparalleled trust.</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="bg-emerald-600 text-white rounded-full p-6 text-4xl">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3 class="mt-6 text-2xl font-bold">Certified Authentic Handicrafts</h3>
+                        <p class="mt-2 text-gray-600">Purchase genuine Sohrai paintings and Dokra art directly from the source. Authenticity guaranteed.</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="bg-emerald-600 text-white rounded-full p-6 text-4xl">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3 class="mt-6 text-2xl font-bold">Community-Approved Homestays</h3>
+                        <p class="mt-2 text-gray-600">Stay in homes approved by the community, offering a true taste of Jharkhandi hospitality.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Discover by Passion -->
+        <section id="discover" class="py-16 md:py-24">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">What Moves You?</h2>
+                <div class="mt-12 grid grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Passion Cards -->
+                    <a href="#" class="passion-card relative h-80 rounded-lg overflow-hidden group" style="background-image: url('static/images/tribal.jpeg'); background-size: cover; background-position: center;">
+                        <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-60 transition-all duration-300 flex items-end">
+                           <h3 class="p-4 text-2xl font-bold text-white">Tribal Culture</h3>
+                        </div>
+                    </a>
+                    <a href="#" class="passion-card relative h-80 rounded-lg overflow-hidden group" style="background-image: url('static/images/1200px-Dassam_falls.jpg'); background-size: cover; background-position: center;">
+                         <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-60 transition-all duration-300 flex items-end">
+                            <h3 class="p-4 text-2xl font-bold text-white">Waterfalls</h3>
+                        </div>
+                    </a>
+                    <a href="#" class="passion-card relative h-80 rounded-lg overflow-hidden group" style="background-image: url('static/images/wildlife-weekend.jpeg'); background-size: cover; background-position: center;">
+                         <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-60 transition-all duration-300 flex items-end">
+                            <h3 class="p-4 text-2xl font-bold text-white">Wildlife</h3>
+                        </div>
+                    </a>
+                     <a href="#" class="passion-card relative h-80 rounded-lg overflow-hidden group" style="background-image: url('static/images/Sun Temple.avif'); background-size: cover; background-position: center;">
+                         <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-60 transition-all duration-300 flex items-end">
+                            <h3 class="p-4 text-2xl font-bold text-white">Spiritual Journeys</h3>
+                        </div>
+                    </a>
+                     <a href="#" class="passion-card col-span-2 lg:col-span-1 relative h-80 rounded-lg overflow-hidden group" style="background-image: url('static/images/ancient crafts.jpeg'); background-size: cover; background-position: center;">
+                         <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-60 transition-all duration-300 flex items-end">
+                            <h3 class="p-4 text-2xl font-bold text-white">Ancient Crafts</h3>
+                        </div>
+                    </a>
+                     <a href="#" class="passion-card relative h-80 rounded-lg overflow-hidden group" style="background-image: url('static/images/Tagore-Hill-Jharkhand.webp'); background-size: cover; background-position: center;">
+                         <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-60 transition-all duration-300 flex items-end">
+                            <h3 class="p-4 text-2xl font-bold text-white">Historical Trails</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Plan Your Trip -->
+        <section id="plan" class="py-16 md:py-24 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Plan Your Perfect Trip</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <a href="#" id="plan-stay" class="block p-8 bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow">
+                        <i class="fas fa-hotel text-5xl text-amber-500"></i>
+                        <h3 class="mt-6 text-2xl font-bold">Where to Stay</h3>
+                        <p class="mt-2 text-gray-600">Find accredited homestays, resorts, and hotels.</p>
+                    </a>
+                    <a href="#" id="plan-guides" class="block p-8 bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow">
+                        <i class="fas fa-user-check text-5xl text-amber-500"></i>
+                        <h3 class="mt-6 text-2xl font-bold">Find a Verified Guide</h3>
+                        <p class="mt-2 text-gray-600">Connect with local experts for an authentic experience.</p>
+                    </a>
+                    <a href="#" class="block p-8 bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow">
+                        <i class="fas fa-map-signs text-5xl text-amber-500"></i>
+                        <h3 class="mt-6 text-2xl font-bold">Tour Packages</h3>
+                        <p class="mt-2 text-gray-600">Explore curated journeys and holiday packages.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Augmented Reality Preview -->
+        <section class="py-16 md:py-24 bg-emerald-800 text-white">
+            <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="md:pr-12">
+                    <h2 class="text-3xl md:text-4xl font-bold">See Jharkhand's Treasures in Your Own Space</h2>
+                    <p class="mt-4 text-lg text-emerald-100">Use your smartphone to preview stunning artifacts and get a 360-degree glimpse of our destinations before you book. A "try before you go" experience.</p>
+                    <button id="ar-button" onclick="window.location.href='https://arya-manohar-16.github.io/Jharkhand-Connect-AR/'" class="mt-8 bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-lg transition-colors">
+                        Explore in AR <i class="fas fa-cube ml-2"></i>
+                    </button>
+                </div>
+                <div>
+                    <!-- Replace with an animated GIF or short video demonstrating AR -->
+                    <img src="static/images/ar-demo-animation.png" alt="Demonstration of Augmented Reality feature" class="rounded-lg shadow-2xl">
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Featured Eco-Cultural Pathways -->
+        <section id="pathways" class="py-16 md:py-24 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Journeys Crafted for the Curious Traveler</h2>
+                </div>
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- These cards would be dynamically generated by the AI planner -->
+                    <div class="pathway-card bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="static/images/chotanagpur-journey.webp" alt="Chotanagpur Journey" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold">3-Day Journey into Chotanagpur's Waterfalls & Tribal Art</h3>
+                            <p class="mt-2 text-gray-600">Interests: Nature, Culture</p>
+                            <a href="#" class="inline-block mt-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2 px-6 rounded-lg transition-colors">View Pathway</a>
+                        </div>
+                    </div>
+                     <div class="pathway-card bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="static/images/wildlife-weekend.jpg" alt="Wildlife Weekend" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold">The Ultimate Wildlife Weekend: Exploring Betla National Park</h3>
+                            <p class="mt-2 text-gray-600">Interests: Wildlife, Adventure</p>
+                            <a href="#" class="inline-block mt-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2 px-6 rounded-lg transition-colors">View Pathway</a>
+                        </div>
+                    </div>
+                     <div class="pathway-card bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="static/images/artisan-trail.jpg" alt="Artisan Trail" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold">4-Day Deep Dive into Sohrai Painting & Dokra Craft</h3>
+                            <p class="mt-2 text-gray-600">Interests: Art, Heritage</p>
+                            <a href="#" class="inline-block mt-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2 px-6 rounded-lg transition-colors">View Pathway</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Section 6: Community Impact -->
+        <section id="about" class="py-16 md:py-24">
+             <div class="container mx-auto px-6 text-center">
+                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Your Travel Empowers</h2>
+                 <blockquote class="mt-8 max-w-3xl mx-auto">
+                     <p class="text-xl italic text-gray-700">"This platform is not just about tourism; it is about preserving our culture and building a future for our children in our own village."</p>
+                     <cite class="block mt-4 font-bold text-emerald-700">— A Community Artisan from Kharsawan</cite>
+                 </blockquote>
+                 <div class="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-8">
+                     <div>
+                         <p class="text-4xl font-bold text-amber-500">150+</p>
+                         <p class="text-lg text-gray-600">Families Supported</p>
+                     </div>
+                     <div>
+                         <p class="text-4xl font-bold text-amber-500">50+</p>
+                         <p class="text-lg text-gray-600">Verified Local Guides</p>
+                     </div>
+                      <div>
+                         <p class="text-4xl font-bold text-amber-500">80%</p>
+                         <p class="text-lg text-gray-600">Of Spending Stays Local</p>
+                     </div>
+                 </div>
+             </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold">Jharkhand Connect</h3>
+                    <p class="mt-4 text-gray-400">Your authentic journey into the heart of India.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold">Explore</h4>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="#discover" class="text-gray-400 hover:text-white">Destinations</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Experiences</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Events & Festivals</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold">For Partners</h4>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">List your Homestay</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Become a Guide</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Trade Portal</a></li>
+                    </ul>
+                </div>
+                 <div>
+                    <h4 class="font-bold">Follow Us</h4>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-800 pt-8 text-center text-gray-500">
+                <p>&copy; 2025 Jharkhand Connect. All rights reserved. A conceptual model by the Department of Tourism, Govt. of Jharkhand.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Custom Modal for alerts -->
+    <div id="custom-modal" class="hidden fixed inset-0 bg-black bg-opacity-60 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg shadow-2xl p-6 md:p-8 max-w-sm w-full text-center">
+            <h3 id="modal-title" class="text-2xl font-bold text-gray-900">Notice</h3>
+            <p id="modal-message" class="mt-4 text-gray-600">This feature is currently in development.</p>
+            <button id="modal-close-btn" class="mt-6 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2 px-8 rounded-lg transition-colors">Close</button>
+        </div>
+    </div>
+
+
+    <!-- JavaScript for Interactivity -->
+    <script src="/static/script.js" defer></script>
+
+</body>
+</html>
+

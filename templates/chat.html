@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jharkhand Travel Agent</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .chat-container {
+            height: calc(100vh - 200px);
+        }
+        .message-bubble {
+            max-width: 70%;
+            animation: fadeIn 0.3s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .typing-indicator {
+            display: inline-block;
+            width: 60px;
+        }
+        .typing-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #6b7280;
+            animation: typing 1.4s infinite ease-in-out;
+        }
+        .typing-dot:nth-child(1) { animation-delay: -0.32s; }
+        .typing-dot:nth-child(2) { animation-delay: -0.16s; }
+        @keyframes typing {
+            0%, 80%, 100% { transform: scale(0.8); opacity: 0.5; }
+            40% { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-green-50 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <!-- Header with Back Button -->
+        <div class="text-center mb-8">
+            <a href="/" class="inline-flex items-center text-blue-600 hover:text-blue-800 mb-4">
+                <i class="fas fa-arrow-left mr-2"></i> Back to Home
+            </a>
+            <div class="flex items-center justify-center mb-4">
+                <i class="fas fa-plane text-4xl text-blue-600 mr-4"></i>
+                <h1 class="text-4xl font-bold text-gray-800">Jharkhand Travel Agent</h1>
+            </div>
+            <p class="text-lg text-gray-600">Plan your perfect trip to Jharkhand with AI assistance</p>
+        </div>
+
+        <!-- Chat Container -->
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden max-w-4xl mx-auto">
+            <!-- Chat Header -->
+            <div class="bg-blue-600 text-white p-4">
+                <div class="flex items-center">
+                    <i class="fas fa-robot text-xl mr-3"></i>
+                    <h2 class="text-xl font-semibold">Travel Assistant</h2>
+                    <span class="ml-auto bg-green-400 text-xs px-2 py-1 rounded-full">Online</span>
+                </div>
+            </div>
+
+            <!-- Messages Area -->
+            <div id="chat-messages" class="chat-container overflow-y-auto p-4 space-y-4">
+                <!-- Welcome Message -->
+                <div class="message-bubble bg-blue-100 text-blue-800 p-4 rounded-2xl rounded-bl-none ml-auto">
+                    <div class="flex items-start">
+                        <i class="fas fa-robot text-blue-600 mt-1 mr-3"></i>
+                        <div>
+                            <p class="font-semibold">Travel Assistant</p>
+                            <p>✨ Welcome! I can help you plan your trip to Jharkhand. Tell me about your travel plans!</p>
+                            <p class="text-sm mt-2 text-blue-700">Available cities: Ranchi, Jamshedpur, Bokaro, Dhanbad</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Area -->
+            <div class="border-t border-gray-200 p-4">
+                <div class="flex space-x-4">
+                    <div class="flex-1">
+                        <input 
+                            type="text" 
+                            id="message-input" 
+                            placeholder="Tell me about your travel plans (e.g., 'I want to visit Ranchi for 3 days with 2 people')"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                        >
+                    </div>
+                    <button 
+                        id="send-button"
+                        class="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200"
+                    >
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <div class="mt-3 flex flex-wrap gap-2">
+                    <button class="quick-btn bg-gray-100 text-gray-700 px-3 py-2 rounded-full text-sm hover:bg-gray-200 transition duration-200">
+                        <i class="fas fa-map-marker-alt mr-1"></i>Ranchi 3 days
+                    </button>
+                    <button class="quick-btn bg-gray-100 text-gray-700 px-3 py-2 rounded-full text-sm hover:bg-gray-200 transition duration-200">
+                        <i class="fas fa-users mr-1"></i>Family trip to Jamshedpur
+                    </button>
+                    <button class="quick-btn bg-gray-100 text-gray-700 px-3 py-2 rounded-full text-sm hover:bg-gray-200 transition duration-200">
+                        <i class="fas fa-hiking mr-1"></i>Adventure in Bokaro
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <div class="bg-white p-6 rounded-2xl shadow-lg text-center">
+                <i class="fas fa-route text-3xl text-blue-600 mb-3"></i>
+                <h3 class="font-semibold text-lg mb-2">Smart Itinerary</h3>
+                <p class="text-gray-600">Get personalized day-by-day travel plans</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-lg text-center">
+                <i class="fas fa-utensils text-3xl text-green-600 mb-3"></i>
+                <h3 class="font-semibold text-lg mb-2">Local Recommendations</h3>
+                <p class="text-gray-600">Discover the best restaurants and attractions</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-lg text-center">
+                <i class="fas fa-car text-3xl text-purple-600 mb-3"></i>
+                <h3 class="font-semibold text-lg mb-2">Transport Options</h3>
+                <p class="text-gray-600">Get travel suggestions between cities</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        class TravelAgent {
+            constructor() {
+                this.conversationId = this.generateId();
+                this.isTyping = false;
+                this.initializeEventListeners();
+                this.checkInitialPrompt();
+            }
+
+            generateId() {
+                return 'conv_' + Math.random().toString(36).substr(2, 9);
+            }
+
+            checkInitialPrompt() {
+                // Check if there's an initial prompt from URL parameters
+                const urlParams = new URLSearchParams(window.location.search);
+                const prompt = urlParams.get('prompt');
+                
+                if (prompt) {
+                    // Set the input field and send the message
+                    const messageInput = document.getElementById('message-input');
+                    messageInput.value = prompt;
+                    // Wait a moment for the UI to settle, then send
+                    setTimeout(() => this.sendMessage(), 500);
+                }
+            }
+
+            initializeEventListeners() {
+                const sendBtn = document.getElementById('send-button');
+                const messageInput = document.getElementById('message-input');
+                const quickBtns = document.querySelectorAll('.quick-btn');
+
+                sendBtn.addEventListener('click', () => this.sendMessage());
+                messageInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') this.sendMessage();
+                });
+
+                quickBtns.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        messageInput.value = btn.textContent.trim();
+                        this.sendMessage();
+                    });
+                });
+            }
+
+            async sendMessage() {
+                const messageInput = document.getElementById('message-input');
+                const message = messageInput.value.trim();
+
+                if (!message) return;
+
+                // Add user message to chat
+                this.addMessage(message, 'user');
+                messageInput.value = '';
+
+                // Show typing indicator
+                this.showTypingIndicator();
+
+                try {
+                    const response = await fetch('/chat', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            message: message,
+                            conversation_id: this.conversationId
+                        })
+                    });
+
+                    const data = await response.json();
+                    
+                    // Hide typing indicator
+                    this.hideTypingIndicator();
+                    
+                    // Add agent response to chat
+                    this.addMessage(data.response, 'agent');
+
+                } catch (error) {
+                    this.hideTypingIndicator();
+                    this.addMessage('Sorry, I encountered an error. Please try again.', 'agent');
+                    console.error('Error:', error);
+                }
+            }
+
+            addMessage(content, sender) {
+                const chatMessages = document.getElementById('chat-messages');
+                const messageDiv = document.createElement('div');
+                
+                if (sender === 'user') {
+                    messageDiv.className = 'message-bubble bg-green-100 text-green-800 p-4 rounded-2xl rounded-br-none ml-auto';
+                    messageDiv.innerHTML = `
+                        <div class="flex items-start justify-end">
+                            <div class="text-right">
+                                <p class="font-semibold">You</p>
+                                <p>${this.formatMessage(content)}</p>
+                            </div>
+                            <i class="fas fa-user text-green-600 mt-1 ml-3"></i>
+                        </div>
+                    `;
+                } else {
+                    messageDiv.className = 'message-bubble bg-blue-100 text-blue-800 p-4 rounded-2xl rounded-bl-none';
+                    messageDiv.innerHTML = `
+                        <div class="flex items-start">
+                            <i class="fas fa-robot text-blue-600 mt-1 mr-3"></i>
+                            <div>
+                                <p class="font-semibold">Travel Assistant</p>
+                                <div>${this.formatMessage(content)}</div>
+                            </div>
+                        </div>
+                    `;
+                }
+
+                chatMessages.appendChild(messageDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+
+            formatMessage(content) {
+                // Convert line breaks to <br> tags and preserve formatting
+                return content.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            }
+
+            showTypingIndicator() {
+                if (this.isTyping) return;
+                
+                this.isTyping = true;
+                const chatMessages = document.getElementById('chat-messages');
+                const typingDiv = document.createElement('div');
+                typingDiv.id = 'typing-indicator';
+                typingDiv.className = 'message-bubble bg-blue-100 text-blue-800 p-4 rounded-2xl rounded-bl-none';
+                typingDiv.innerHTML = `
+                    <div class="flex items-start">
+                        <i class="fas fa-robot text-blue-600 mt-1 mr-3"></i>
+                        <div>
+                            <p class="font-semibold">Travel Assistant</p>
+                            <div class="typing-indicator">
+                                <span class="typing-dot"></span>
+                                <span class="typing-dot"></span>
+                                <span class="typing-dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                chatMessages.appendChild(typingDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+
+            hideTypingIndicator() {
+                this.isTyping = false;
+                const typingIndicator = document.getElementById('typing-indicator');
+                if (typingIndicator) {
+                    typingIndicator.remove();
+                }
+            }
+        }
+
+        // Initialize the travel agent when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new TravelAgent();
+        });
+    </script>
+</body>
+</html>
